@@ -1,14 +1,19 @@
 import cn from 'classnames'
 import Link from 'next/link'
+import LazyLoad from 'react-lazyload';
 
 export default function CoverImage({ title, coverImage, slug }) {
   const image = (
-    <img
-      src={coverImage?.sourceUrl}
-      className={cn('shadow-small', {
-        'hover:shadow-medium transition-shadow duration-200': slug,
-      })}
-    />
+    <LazyLoad>
+        <img
+        loading="lazy"
+        src={coverImage?.sourceUrl}
+        className={cn('shadow-small', {
+          'hover:shadow-medium transition-shadow duration-200': slug,
+        })}
+      />
+    </LazyLoad>
+    
   )
   return (
     <div className="sm:mx-0">

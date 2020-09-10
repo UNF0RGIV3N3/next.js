@@ -1,3 +1,4 @@
+import LazyLoad from 'react-lazyload';
 export default function Avatar({ author }) {
   const name =
     author.firstName && author.lastName
@@ -6,11 +7,14 @@ export default function Avatar({ author }) {
 
   return (
     <div className="flex items-center">
-      <img
-        src={author.avatar.url}
-        className="w-12 h-12 rounded-full mr-4"
-        alt={name}
-      />
+      <LazyLoad>
+        <img
+          loading="lazy"
+          src={author.avatar.url}
+          className="w-12 h-12 rounded-full mr-4"
+          alt={name}
+        />
+      </LazyLoad>
       <div className="text-xl font-bold">{name}</div>
     </div>
   )
