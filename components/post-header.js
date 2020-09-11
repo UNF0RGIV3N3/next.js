@@ -3,8 +3,14 @@ import Date from '../components/date'
 import CoverImage from '../components/cover-image'
 import PostTitle from '../components/post-title'
 import Categories from '../components/categories'
-import ReactPlayer from "react-player/lazy";
+import dynamic from 'next/dynamic'
 
+const DynamicTwitch = dynamic(
+  () => import('../components/twitch'),
+  { 
+    loading: () => <p>...</p> 
+  }
+)
 
 export default function PostHeader({
   title,
@@ -19,18 +25,7 @@ export default function PostHeader({
       <div className="hidden md:block md:mb-12">
         <Avatar author={author} />
       </div>
-      <ReactPlayer
-        url={"https://www.twitch.tv/pow3rtv"}
-        playing
-        muted
-        config={{
-          twitch: {
-            options: {
-              parent: "ifood.vercel.app"
-            }
-          }
-        }}
-      />
+      <DynamicTwitch></DynamicTwitch>
       <div className="mb-8 md:mb-16 sm:mx-0">
         <CoverImage title={title} coverImage={coverImage} />
       </div>
