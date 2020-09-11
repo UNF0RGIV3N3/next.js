@@ -3,7 +3,7 @@ import Date from '../components/date'
 import CoverImage from '../components/cover-image'
 import PostTitle from '../components/post-title'
 import Categories from '../components/categories'
-import ReactPlayer from 'react-player'
+import ReactPlayer from "react-player/lazy";
 
 
 export default function PostHeader({
