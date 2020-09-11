@@ -26,7 +26,7 @@ export default function PostHeader({
         config={{
           twitch: {
             options: {
-              parent: "codesandbox.io"
+              parent: "ifood.vercel.app"
             }
           }
         }}
