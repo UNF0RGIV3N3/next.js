@@ -10,6 +10,7 @@ export default function CoverImage({ title, coverImage, slug }) {
         <img
           alt = {alt}
           src={coverImage?.sourceUrl}
+          srcSet={coverImage?.srcSet}
           className={cn('shadow-small', {
           'hover:shadow-medium transition-shadow duration-200': slug,
         })}

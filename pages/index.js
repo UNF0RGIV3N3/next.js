@@ -10,7 +10,6 @@ import { CMS_NAME } from '../lib/constants'
 export default function Index({ allPosts: { edges }, preview }) {
   const heroPost = edges[0]?.node
   const morePosts = edges.slice(1)
-
   return (
     <>
       <Layout preview={preview}>
