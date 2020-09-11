@@ -9,7 +9,6 @@ export default function Avatar({ author }) {
     <div className="flex items-center">
       <LazyLoad>
         <img
-          loading="lazy"
           src={author.avatar.url}
           className="w-12 h-12 rounded-full mr-4"
           alt={name}

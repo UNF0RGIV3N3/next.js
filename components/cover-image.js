@@ -6,9 +6,8 @@ export default function CoverImage({ title, coverImage, slug }) {
   const image = (
     <LazyLoad>
         <img
-        loading="lazy"
-        src={coverImage?.sourceUrl}
-        className={cn('shadow-small', {
+          src={coverImage?.sourceUrl}
+          className={cn('shadow-small', {
           'hover:shadow-medium transition-shadow duration-200': slug,
         })}
       />
