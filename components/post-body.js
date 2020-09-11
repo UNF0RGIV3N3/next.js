@@ -24,7 +24,8 @@ const getImage = node => {
 const replaceMedia = node => {
   const image = getImage(node);
   if (image != null) {
-    const alt = image.attribs.src.split('.')[2].replace(/https:\/\//g, "").split('/');
-    return <LazyLoad><img src={image.attribs.src} alt={alt[alt.length-1].replace(/-/g, " ")} width={image.attribs.width}/></LazyLoad>;
+    let alt = image.attribs.src.split('/');
+    alt = alt[alt.length -1].split('.')[0].replace(/-/g, " ").replace(/[0-9]/g, "").replace(/ x /g, "").trim()
+    return <LazyLoad><img src={image.attribs.src} alt={alt} width={image.attribs.width}/></LazyLoad>;
   }
 };

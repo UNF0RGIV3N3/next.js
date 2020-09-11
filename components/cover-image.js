@@ -3,11 +3,12 @@ import Link from 'next/link'
 import LazyLoad from 'react-lazyload';
 
 export default function CoverImage({ title, coverImage, slug }) {
-  const alt = coverImage?.sourceUrl.split('.')[2].replace(/https:\/\//g, "").split('/');
+  let alt = coverImage?.sourceUrl.split('/');
+  alt = alt[alt.length -1].split('.')[0].replace(/-/g, " ").replace(/[0-9]/g, "").replace(/ x /g, "").trim()
   const image = (
     <LazyLoad>
         <img
-          alt = {alt[alt.length-1].replace(/-/g, " ")}
+          alt = {alt}
           src={coverImage?.sourceUrl}
           className={cn('shadow-small', {
           'hover:shadow-medium transition-shadow duration-200': slug,
