@@ -1,4 +1,5 @@
-import LazyLoad from 'react-lazyload';
+import LazyLoad from 'react-lazyload'
+
 export default function Avatar({ author }) {
   const name =
     author.firstName && author.lastName

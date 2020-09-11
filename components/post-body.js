@@ -1,6 +1,6 @@
-import styles from './post-body.module.css';
-import LazyLoad from 'react-lazyload';
-import parse from 'html-react-parser';
+import styles from './post-body.module.css'
+import LazyLoad from 'react-lazyload'
+import parse from 'html-react-parser'
 
 export default function PostBody({ content }) {
   return (
@@ -24,7 +24,7 @@ const getImage = node => {
 const replaceMedia = node => {
   const image = getImage(node);
   if (image != null) {
-    let alt = image.attribs.src.split('/');
+    let alt = image.attribs.src.split('/')
     alt = alt[alt.length -1].split('.')[0].replace(/-/g, " ").replace(/[0-9]/g, "").replace(/ x/g, "").replace(/ x /g, "").replace(/_/g, " ").trim()
     return <LazyLoad><img src={image.attribs.src} alt={alt} width={image.attribs.width}/></LazyLoad>;
   }

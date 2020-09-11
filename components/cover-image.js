@@ -1,9 +1,9 @@
 import cn from 'classnames'
 import Link from 'next/link'
-import LazyLoad from 'react-lazyload';
+import LazyLoad from 'react-lazyload'
 
 export default function CoverImage({ title, coverImage, slug }) {
-  let alt = coverImage?.sourceUrl.split('/');
+  let alt = coverImage?.sourceUrl.split('/')
   alt = alt[alt.length -1].split('.')[0].replace(/-/g, " ").replace(/[0-9]/g, "").replace(/ x/g, "").replace(/ x /g, "").replace(/_/g, " ").trim()
   const image = (
     <LazyLoad>
