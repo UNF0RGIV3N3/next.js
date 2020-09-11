@@ -5,12 +5,10 @@ import PostTitle from '../components/post-title'
 import Categories from '../components/categories'
 import dynamic from 'next/dynamic'
 
-const DynamicTwitch = dynamic(
-  () => import('../components/twitch'),
-  { 
-    loading: () => <p>...</p> 
-  }
-)
+const DynamicTwitch = dynamic(() => import("../components/twitch"), {
+  ssr: false,
+});
+
 
 export default function PostHeader({
   title,
