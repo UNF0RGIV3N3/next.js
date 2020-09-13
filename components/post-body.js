@@ -1,11 +1,17 @@
 import styles from './post-body.module.css'
 import LazyLoad from 'react-lazyload'
 import parse from 'html-react-parser'
-import { DFPSlotsProvider, AdSlot } from 'react-dfp';
+import dynamic from 'next/dynamic'
+
+const DynamicComponentWithNoSSR = dynamic(
+  () => import('../components/gpt'),
+  { ssr: false }
+)
 
 export default function PostBody({ content }) {
   return (
     <div className="max-w-2xl mx-auto">
+      <DynamicComponentWithNoSSR />
       <div className={styles.content + " post__content"} >{parse(content, {replace: replaceMedia})}</div>
     </div>
   )
@@ -29,7 +35,7 @@ const replaceMedia = node => {
     alt = alt[alt.length -1].split('.')[0].replace(/-/g, " ").replace(/[0-9]/g, "").replace(/ x/g, "").replace(/ x /g, "").replace(/_/g, " ").trim()
     return <LazyLoad><img src={image.attribs.src} srcSet={image.attribs.srcset} alt={alt} width={image.attribs.width}/></LazyLoad>;
   }
-  if (node.name === 'p'){
+ /*  if (node.name === 'p'){
     count_p++;
     if ([3, 9, 12, 15].includes(count_p)) {
      return (
@@ -40,5 +46,5 @@ const replaceMedia = node => {
         </DFPSlotsProvider>
      )
     }
-  }
+  } */
 };

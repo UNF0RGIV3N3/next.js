@@ -21,8 +21,12 @@ export default function PostHeader({
       </div>
       <div className="mb-8 md:mb-16 sm:mx-0">
         <DFPSlotsProvider dfpNetworkId="9528481">
-          <div className="BOX_TOP-2">
-            <AdSlot sizes={[[300,250],[336,280],[320,480],[300,600],'fluid']} adUnit="BOX_TOP_IFOOD.IT" />
+          <div className="BOX_TOP_IFOOD">
+            <AdSlot 
+              sizes={[[300,250],[336,280],[320,480],[300,600],'fluid']} 
+              adUnit="BOX_TOP_IFOOD.IT" 
+              onSlotRender={eventData => console.log('BOX_TOP_IFOOD rendered!', eventData)} 
+            />
           </div>
         </DFPSlotsProvider>
         <CoverImage title={title} coverImage={coverImage} />

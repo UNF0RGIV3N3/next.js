@@ -5,6 +5,18 @@ export default class MyDocument extends Document {
     return (
       <Html lang="en">
         <Head />
+        <script
+          async
+          src='https://www.googletagservices.com/tag/js/gpt.js'
+        />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+            var googletag = googletag || {};
+            googletag.cmd = googletag.cmd || [];
+        `
+          }}
+        />
         <body>
           <Main />
           <NextScript />
