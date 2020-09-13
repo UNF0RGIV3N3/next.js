@@ -12,6 +12,7 @@
     "html-react-parser": "^0.14.0",
     "next": "latest",
     "react": "^16.13.1",
+    "react-dfp": "^0.18.0",
     "react-dom": "^16.13.1",
     "react-lazyload": "^3.0.0",
     "react-player": "^2.6.2"
