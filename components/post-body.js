@@ -45,7 +45,8 @@ const replaceMedia = node => {
   if (image != null) {
     let alt = image.attribs.src.split('/')
     alt = alt[alt.length -1].split('.')[0].replace(/-/g, " ").replace(/[0-9]/g, "").replace(/ x/g, "").replace(/ x /g, "").replace(/_/g, " ").trim()
-    return <LazyLoad><img src={'https://cdn.statically.io/img/'+image.attribs.src+'?quality=80&f=auto'} srcSet={getSrcSet(image.attribs.srcset)} alt={alt} width={image.attribs.width}/></LazyLoad>;
+    let sourceUrl = image.attribs.src.replace(/^https?:\/\//,'');
+    return <LazyLoad><img src={'https://cdn.statically.io/img/'+sourceUrl+'?quality=80&f=auto'} srcSet={getSrcSet(image.attribs.srcset)} alt={alt} width={image.attribs.width}/></LazyLoad>;
   }
  /*  if (node.name === 'p'){
     count_p++;

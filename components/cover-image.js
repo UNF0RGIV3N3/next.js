@@ -16,11 +16,12 @@ const getSrcSet = srcSet => {
 export default function CoverImage({ title, coverImage, slug }) {
   let alt = coverImage?.sourceUrl.split('/')
   alt = alt[alt.length -1].split('.')[0].replace(/-/g, " ").replace(/[0-9]/g, "").replace(/ x/g, "").replace(/ x /g, "").replace(/_/g, " ").trim()
+  let sourceUrl = coverImage?.sourceUrl.replace(/^https?:\/\//,'');
   const image = (
     <LazyLoad>
         <img
           alt = {alt}
-          src={'https://cdn.statically.io/img/'+coverImage?.sourceUrl+'?quality=80&f=auto'}
+          src={'https://cdn.statically.io/img/'+sourceUrl+'?quality=80&f=auto'}
           srcSet={getSrcSet(coverImage?.srcSet)}
           className={cn('shadow-small', {
           'hover:shadow-medium transition-shadow duration-200': slug,
