@@ -1,3 +1,5 @@
+import LazyLoad from 'react-lazyload'
+
 const AD_UNIT_PATH = '/9528481/HALFPAGE_IFOOD.IT';
 
 class Banner extends React.Component {
@@ -12,9 +14,11 @@ class Banner extends React.Component {
 
     render() {
         return (
+          <LazyLoad>
             <div id="banner">
-		<div id="div-1" style={{ height: '300px', width: '250px' }} />
+		          <div id="div-1" style={{ height: '300px', width: '250px' }} />
             </div>
+          </LazyLoad>
         );
     }
 }

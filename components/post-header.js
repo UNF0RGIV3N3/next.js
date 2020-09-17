@@ -20,7 +20,7 @@ export default function PostHeader({
         <Avatar author={author} />
       </div>
       <div className="mb-8 md:mb-16 sm:mx-0">
-        <DFPSlotsProvider dfpNetworkId="9528481">
+        {/* <DFPSlotsProvider dfpNetworkId="9528481">
           <div className="BOX_TOP_IFOOD">
             <AdSlot 
               sizes={[[300,250],[336,280],[320,480],[300,600],'fluid']} 
@@ -28,7 +28,7 @@ export default function PostHeader({
               onSlotRender={eventData => console.log('BOX_TOP_IFOOD rendered!', eventData)} 
             />
           </div>
-        </DFPSlotsProvider>
+        </DFPSlotsProvider> */}
         <CoverImage title={title} coverImage={coverImage} />
       </div>
       <div className="max-w-2xl mx-auto">
