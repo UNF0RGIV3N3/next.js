@@ -29,11 +29,14 @@ const getImage = node => {
 };
 
 const getSrcSet = srcSet => {
-  srcSet.match(/[^"'=\s]+\.(jpe?g|png|gif)/g).forEach(element => {
-    element = element.replace(/^https?:\/\//,'');
-    srcSet = srcSet.replace(element, 'cdn.statically.io/img/'+element+'?quality=80&f=auto');
-  });
-  return srcSet
+  if (srcSet){
+    srcSet.match(/[^"'=\s]+\.(jpe?g|png|gif)/g).forEach(element => {
+      element = element.replace(/^https?:\/\//,'');
+      srcSet = srcSet.replace(element, 'cdn.statically.io/img/'+element+'?quality=80&f=auto');
+    });
+    return srcSet
+    }
+  return
 };
 
 var count_p = 0;
