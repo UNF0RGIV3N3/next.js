@@ -5,6 +5,7 @@ export default class MyDocument extends Document {
     return (
       <Html lang="en">
         <Head />
+        <link rel="preconnect" href="https://www.ifood.it"/>
         <script
           async
           src='https://www.googletagservices.com/tag/js/gpt.js'
