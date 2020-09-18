@@ -8,15 +8,15 @@ export default class MyDocument extends Document {
         <link rel="preconnect" href="https://www.ifood.it"/>
         <link rel="preconnect" href="https://cdn.iubenda.com"/>
 
-        <script
-          async
-          src='https://www.googletagservices.com/tag/js/gpt.js'
-        />
+        <link rel="preload" href="https://securepubads.g.doubleclick.net/tag/js/gpt.js" as="script"/>
         <script
           dangerouslySetInnerHTML={{
             __html: `
             var googletag = googletag || {};
             googletag.cmd = googletag.cmd || [];
+            googletag.cmd.push(function() {
+                googletag.pubads().disableInitialLoad();
+            });
         `
           }}
         />
