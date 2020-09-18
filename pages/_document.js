@@ -6,6 +6,8 @@ export default class MyDocument extends Document {
       <Html lang="en">
         <Head />
         <link rel="preconnect" href="https://www.ifood.it"/>
+        <link rel="preconnect" href="https://cdn.iubenda.com"/>
+
         <script
           async
           src='https://www.googletagservices.com/tag/js/gpt.js'
