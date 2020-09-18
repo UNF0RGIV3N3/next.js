@@ -2,6 +2,7 @@ import styles from './post-body.module.css'
 import LazyLoad from 'react-lazyload'
 import parse from 'html-react-parser'
 import dynamic from 'next/dynamic'
+import Policy from './iubenda'
 
 const DynamicComponentWithNoSSR = dynamic(
   () => import('../components/gpt'),
@@ -13,6 +14,7 @@ export default function PostBody({ content }) {
     <div className="max-w-2xl mx-auto">
       <DynamicComponentWithNoSSR />
       <div className={styles.content + " post__content"} >{parse(content, {replace: replaceMedia})}</div>
+      <Policy />
     </div>
   )
 }
@@ -39,7 +41,6 @@ const getSrcSet = srcSet => {
   return
 };
 
-var count_p = 0;
 const replaceMedia = node => {
   const image = getImage(node);
   if (image != null) {
@@ -48,17 +49,4 @@ const replaceMedia = node => {
     let sourceUrl = image.attribs.src.replace(/^https?:\/\//,'');
     return <LazyLoad><img src={'https://cdn.statically.io/img/'+sourceUrl+'?quality=80&f=auto'} srcSet={getSrcSet(image.attribs.srcset)} alt={alt} width={image.attribs.width}/></LazyLoad>;
   }
- /*  if (node.name === 'p'){
-    count_p++;
-    if ([3, 9, 12, 15].includes(count_p)) {
-     return (
-    console.log("element", element)
-        <DFPSlotsProvider dfpNetworkId="9528481">
-          <div className="BOX_TOP-2">
-            <AdSlot sizes={[[300,600],[300,400],[300,250],[320,480],[320,50],'fluid']} adUnit="HALFPAGE_IFOOD.IT" />
-          </div>
-        </DFPSlotsProvider>
-     )
-    }
-  } */
 };
