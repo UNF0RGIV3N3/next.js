@@ -21,7 +21,7 @@ export default class MyDocument extends Document {
         <script
         dangerouslySetInnerHTML={{
             __html: `var _iub = _iub || [];
-                    _iub.csConfiguration = {"whitelabel":false,"lang":"it","siteId":2010922,"enableCMP":true,"googleAdditionalConsentMode":true,"isTCFConsentGlobal":false,"cookiePolicyId":89564238, "banner":{ "acceptButtonDisplay":true,"customizeButtonDisplay":true,"position":"float-top-center" }};
+            _iub.csConfiguration = {"whitelabel":false,"lang":"it","siteId":2010922,"enableCMP":true,"googleAdditionalConsentMode":true,"isTCFConsentGlobal":false,"cookiePolicyId":89564238, "banner":{ "acceptButtonDisplay":true,"customizeButtonDisplay":true,"position":"float-top-center" }};
         `
         }}
         />
