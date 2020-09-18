@@ -25,8 +25,8 @@ export default class MyDocument extends Document {
         `
         }}
         />
-        <script type="text/javascript" src="//cdn.iubenda.com/cs/tcf/stub-v2.js"></script>
-        <script type="text/javascript" src="//cdn.iubenda.com/cs/iubenda_cs.js" charset="UTF-8" async></script>
+        <script type="text/javascript" src="//cdn.iubenda.com/cs/tcf/stub-v2.js" defer></script>
+        <script type="text/javascript" src="//cdn.iubenda.com/cs/iubenda_cs.js" charset="UTF-8" defer></script>
         <body>
           <Main />
           <NextScript />
