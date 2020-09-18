@@ -2,7 +2,6 @@ import styles from './post-body.module.css'
 import LazyLoad from 'react-lazyload'
 import parse from 'html-react-parser'
 import dynamic from 'next/dynamic'
-import Twitch from './twitch'
 
 const DynamicComponentWithNoSSR = dynamic(
   () => import('../components/gpt'),
@@ -13,7 +12,6 @@ export default function PostBody({ content }) {
   return (
     <div className="max-w-2xl mx-auto">
       <DynamicComponentWithNoSSR />
-      <Twitch/>
       <div className={styles.content + " post__content"} >{parse(content, {replace: replaceMedia})}</div>
     </div>
   )
