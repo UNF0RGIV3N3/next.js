@@ -20,7 +20,7 @@ export default class MyDocument extends Document {
         />
         <script type="text/javascript" async="true"
         dangerouslySetInnerHTML={{
-            __html: `<script type="text/javascript" async=true>
+            __html: `
             (function() {
               var host = window.location.hostname;
               var element = document.createElement('script');
